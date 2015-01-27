@@ -8,10 +8,18 @@
 
 	try{
 		config = JSON.parse(Assets.getText(commonConfigPath));
+	}catch(e){
+		console.error(e);
+		throw new Error('[config] not a valid json : ' + commonConfigPath);
+	}
+
+	try{
 		envConfig = JSON.parse(Assets.getText(envConfigPath));
 	}catch(e){
-		throw new Error(e,'[config] not valid jsons : ' + envConfigPath +' and ' + commonConfigPath);
+		console.error(e);
+		throw new Error('[config] not a valid json : ' + envConfigPath);
 	}
+
 
 	config.public = config.public || {};
 	envConfig.public = envConfig.public || {};
@@ -23,7 +31,7 @@
 	CONFIG.public.NODE_ENV = NODE_ENV;
 	CONFIG.public.ENV = ENV;
 
-	
+
 	Meteor.methods({
 		config : function(){
 			return CONFIG.public;

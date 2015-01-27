@@ -6,7 +6,20 @@
     	"APP_STORE_URL" : "",
     	"PLAY_STORE_URL" : "",
     	"LOGGED_OUT_PATH" : "",
-    	"GOOGLE_MAPS_API_KEY" : "AIzaSyCG45q-gjHAHhJF3AdyglNNoJwjZ4Yzxpc",
-    	"GOOGLE_ANALYTICS_ID" : ""
+    	"GOOGLE_MAPS_API_KEY" : "",
+    	"GOOGLE_ANALYTICS_ID" : "",
+    	"PUSH" : {
+    		"GCM_PROJECT_NUMBER" : "1051480757474",
+    		"BADGE" : true,
+    		"ALERT" : true,
+    		"SOUND" : true
+    	}
+	},
+	"PUSH" : {
+		"GCM_API_KEY"		 : "AIzaSyC-SpTYe0O4eNM1HNFHRc9Ny5eIU2n4n9A",
+		"APN_PASSPHRASE"	 : "ooeh2012",
+		"APN_CERT_PATH"		 : "certs/apns-dev-cert.pem",
+		"APN_KEY_PATH"		 : "certs/apns-dev-key.pem",
+		"PRODUCTION"		 : false
 	}
 }
