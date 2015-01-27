@@ -1,4 +1,3 @@
-require = Meteor.npmRequire;
 /** Sub Modules **/
 angular.module('pele.config',[]);
 angular.module('pele.routing',['ui.router','pele.config','pele.users']);

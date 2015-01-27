@@ -7,10 +7,7 @@ Meteor.startup(function () {
             return;
         }
 
-        var appIdModule = CONFIG.APP_ID.toLowerCase(),
-            appIdMainModule = appIdModule + '.main';
-
-        console.log('appIdModule',appIdModule);
+        var appIdModule = CONFIG.APP_ID.toLowerCase();
 
         var deps = [
             'angular-meteor',
