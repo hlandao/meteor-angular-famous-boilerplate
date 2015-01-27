@@ -1,0 +1,10 @@
+{
+	"public" : {
+		"REPORT_ANALYTICS" : true,
+    	"APP_STORE_URL" : "",
+    	"PLAY_STORE_URL" : "",
+    	"LOGGED_OUT_PATH" : "",
+    	"GOOGLE_MAPS_API_KEY" : "AIzaSyCG45q-gjHAHhJF3AdyglNNoJwjZ4Yzxpc"
+    	"GOOGLE_ANALYTICS_ID" : ""
+	}
+}
