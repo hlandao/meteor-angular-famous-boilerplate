@@ -4,10 +4,15 @@ var directiveDeps = ['$timeout', '$state'];
 function BackDirective ($timeout, $state){
     return function(scope, element, attrs){
 
-        element.bind("click tap", function(e) {
+        element.bind("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+
             $timeout(function(){
                 $state.goBack(attrs.defaultState);
             }, 0);
+
+            return false;
         });
 
     }
