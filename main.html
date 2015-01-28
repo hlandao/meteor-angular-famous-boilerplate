@@ -2,9 +2,10 @@
   <title>boilerplate</title>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    </script>
 </head>
 
 <body>
-<div ui-view ng-controller="MainCtrl"></div>
+	<fa-app class="full-screen">
+		<div ui-view fa-animate-enter="enter($done)" fa-animate-leave="leave($done)"></div>
+	</fa-app>
 </body>

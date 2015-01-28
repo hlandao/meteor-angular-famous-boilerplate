@@ -1,3 +1,6 @@
-<div class="home">
-	HOME
-</div>
+<pele-screen>
+    <fa-surface fa-background-color="'red'">
+        Home
+        <a href="/#/welcome"> Welcome </a>
+    </fa-surface>
+</pele-screen>

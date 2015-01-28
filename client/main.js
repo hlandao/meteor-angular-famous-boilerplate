@@ -1,6 +1,6 @@
 angular.module('main', []);
 	
 	angular.module('main')
-	.controller('MainCtrl', ['$scope','PEPush', function($scope,PEPush){
-		console.log('PEPush1',PEPush);
+	.controller('MainCtrl', ['$scope','$famous', 'PEPush', function($scope,$famous,PEPush){
+	
 	}]);

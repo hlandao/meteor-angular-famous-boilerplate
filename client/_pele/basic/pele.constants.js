@@ -1,6 +1,6 @@
-angular.module('pele.config')
-    .provider('PEConstants', ['PEConfigProvider', function(PEConfigProvider){
-        
+var deps = ['PEConfigProvider'];
+
+function PEConstantsProvider (PEConfigProvider){
         var constants = {
             LS : {
                 USER_KEY : 'USER'
@@ -14,4 +14,8 @@ angular.module('pele.config')
         this.$get = [function(){
             return constants;
         }]
-    }]);
+}
+
+PEConstantsProvider.$inject = deps;
+
+angular.module('pele.config').provider('PEConstants', PEConstantsProvider);

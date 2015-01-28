@@ -7,7 +7,7 @@ Meteor.startup(function () {
             return;
         }
 
-        var appIdModule = CONFIG.APP_ID.toLowerCase();
+        APP_ID = CONFIG.APP_ID.toLowerCase();
 
         var deps = [
             'angular-meteor',
@@ -15,15 +15,16 @@ Meteor.startup(function () {
             'ui.router',
             'pele',
             'main',
-            appIdModule,
+            'home',
+            'welcome'
         ];
 
-        angular.module(CONFIG.APP_ID,deps)
+        angular.module(APP_ID,deps)
             .run(['PELog', function(PELog){
-                PELog.debug('[client] boot client app ' + appIdModule + ' successfully');
+                PELog.debug('[client] boot client app ' + APP_ID + ' successfully');
             }]);
 
-        angular.bootstrap(document, [CONFIG.APP_ID]);
+        angular.bootstrap(document, [APP_ID]);
     }
 
     var getConfigFromLocalStorage = function(){

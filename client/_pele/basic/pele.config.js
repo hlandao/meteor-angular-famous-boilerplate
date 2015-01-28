@@ -1,8 +1,6 @@
-angular.module('pele.config')
-    .provider('PEConfig', [function() {
+var deps = [];
 
-    /** COMMON CONFIG **/
-
+function PEConfigProvider (){
     /** Public Provider  API **/
     this.setConfig = function(newConfig) {
         angular.extend(CONFIG, newConfig);
@@ -15,4 +13,8 @@ angular.module('pele.config')
     this.$get = [function() {
         return CONFIG;
     }];
-}]);
+}
+
+PEConfigProvider.$inject = deps;
+
+angular.module('pele.config').provider('PEConfig', PEConfigProvider);

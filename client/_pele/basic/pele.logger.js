@@ -1,5 +1,6 @@
-angular.module('pele.logger')
-    .service('PELog', ['$log', function($log){
+var deps = ['$log'];
+
+function PELogService ($log){
         this.log = function(){
             return $log.log.apply(this, arguments);
         }
@@ -15,4 +16,8 @@ angular.module('pele.logger')
         this.debug = function(){
             return $log.log.apply(this, arguments);
         }
-    }])
+}
+
+PELogService.$inject = deps;
+
+angular.module('pele.logger').service('PELog', PELogService);

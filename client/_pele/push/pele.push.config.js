@@ -1,7 +1,7 @@
-var h;
-angular.module('pele.push')
-    .service('PEPush', ['PEConfig', function(PEConfig) {
-        window.h = this.init = function(){
+var deps = ['PEConfig'];
+
+function PEPushService (PEConfig){
+    this.init = function(){
             if(PEConfig.PUSH){
                 Push.Configure({
                     gcm: {
@@ -15,5 +15,9 @@ angular.module('pele.push')
                     alert: PEConfig.PUSH.ALERT
                 });
             }
-        }
-    }]);
+    }
+}
+
+PEPushService.$inject = deps;
+
+angular.module('pele.push').service('PEPush', PEPushService);
