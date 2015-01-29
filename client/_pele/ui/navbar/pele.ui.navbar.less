@@ -1,0 +1,39 @@
+@navbar-bg-color : #fff;
+
+.pe-navbar{
+  padding-top:20px;
+  background:@navbar-bg-color;
+  font-weight:bold;
+  height:100%;
+  .navbar-bottom-border{
+    width:100%;
+    height:1px;
+    background: rgba(183, 183, 183,1);
+    position: absolute;
+    bottom:0;
+  }
+  .pe-navbar-button{
+    position: absolute;
+    line-height: 44px;
+    font-weight: 500;
+    color: #0178ff;
+    &.left{
+      left: 0;
+      padding-left: 12px;
+    }
+    &.right{
+      right:0;
+      padding-right: 12px;
+
+    }
+  }
+  .pe-navbar-title{
+    line-height: 44px;
+    text-align:center;
+    font-weight: 500;
+  }
+}
+
+.hairlines .pe-navbar .navbar-bottom-border{
+  height:0.5px;
+}

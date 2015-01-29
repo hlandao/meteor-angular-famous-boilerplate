@@ -68,7 +68,6 @@ Meteor.startup(function () {
     }
 
 
-
     CONFIG = getConfigFromLocalStorage();
     if(CONFIG){
         boot();

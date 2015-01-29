@@ -2039,7 +2039,7 @@ angular.module('famous.angular')
 
             if (attrs.faClick) {
               var renderNode = (isolate.renderNode._eventInput || isolate.renderNode);
-              renderNode.on("click", function (data) {
+                renderNode.on("click", function (data) {
                 var fn = $parse(attrs.faClick);
                 fn(scope, {$event: data});
                 if (!scope.$$phase){
@@ -2843,7 +2843,7 @@ angular.module('famous.angular')
 
           },
           post: function (scope, element, attrs) {
-            var isolate = $famousDecorator.ensureIsolate(scope);
+              var isolate = $famousDecorator.ensureIsolate(scope);
 
             transclude(scope, function (clone) {
               element.find('div').append(clone);
@@ -6141,7 +6141,6 @@ angular.module('famous.angular')
           pre: function(scope, element, attrs){
 
             var isolate = $famousDecorator.ensureIsolate(scope);
-            // console.log("fa-surface", isolate);
             var Surface = $famous['famous/core/Surface'];
             var Transform = $famous['famous/core/Transform'];
             var EventHandler = $famous['famous/core/EventHandler'];

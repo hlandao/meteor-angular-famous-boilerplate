@@ -5,6 +5,7 @@ function BackDirective ($timeout, $state){
     return function(scope, element, attrs){
 
         element.bind("click", function(e) {
+            console.log('click');
             e.stopPropagation();
             e.preventDefault();
 
@@ -70,6 +71,7 @@ var runDeps = ['$rootScope', '$state','PERoutingHelper','PELog'];
 function RoutingRun($rootScope, $state,PERoutingHelper,PELog){
 
     $state.goBack = function(defaultState, params){
+        console.log('$state.goBack');
         if($state.previous && $state.previous.name){
             PERoutingHelper.backTransition = true;
             $state.go($state.previous.name, params);
@@ -80,6 +82,7 @@ function RoutingRun($rootScope, $state,PERoutingHelper,PELog){
     }
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+        console.log('$stateChangeSuccess');
         $state.previous = fromState;
     });
 }

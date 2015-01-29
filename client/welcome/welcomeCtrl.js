@@ -1,21 +1,21 @@
-var deps = ['$scope', '$famous','$timeout'];
+var deps = ['$scope', '$famous','$timeout','$state'];
 
-function WelcomeCtrl($scope,$famous,$timeout){
-			var ctrl = this;
-			/** Famous Dependencies **/
-	        var EventHandler = $famous['famous/core/EventHandler'];
-	        var Transitionable = $famous['famous/transitions/Transitionable'];
+function WelcomeCtrl($scope,$famous,$timeout,$state){
+    /** Famous Components **/
+    var EventHandler = $famous['famous/core/EventHandler'];
 
-	        /** Enter & Leave Animations **/
-	        ctrl.translate = new Transitionable([0, 0, 0]);
-	        $scope.enter = function ($done) {
-	            ctrl.translate.set([0, 0, 0], { duration: 400, curve: 'easeInOut' }, $done);
-	        }
-	        $scope.leave = function ($done) {
-	            var duration = 400;
-				ctrl.translate.set([320, 0, 0], { duration: duration, curve: 'easeInOut' }, $done);
-				$timeout($done, duration);
-	        }
+    /** Init Vars **/
+    this.scrollViewEventHandler = new EventHandler();
+    this.goBack = function(){
+        $state.goBack('home');
+    }
+
+    this.imageUrl = function(i){
+        i = i%5;
+        var ext = i == 0 ? '.png' : '.jpg';
+        return '/img/dummies/alfred-icon300-' + i + ext;
+    }
+
 }
 
 WelcomeCtrl.$inject = deps;

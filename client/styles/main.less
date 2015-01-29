@@ -1,4 +1,14 @@
-.full-screen {
+*{
+ box-sizing: border-box;
+//  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+
+}
+
+
+.pe-full-screen {
     position: fixed;
     bottom: 0;
     top: 0;
@@ -6,23 +16,136 @@
     right: 0;
 }
 
-.full-height,
-.full-height .fa-surface {
+.pe-full-height,
+.pe-full-height .fa-surface {
     height: 100%
 }
 
-.full-width,
-.full-width .fa-surface {
+.pe-full-width,
+.pe-full-width .fa-surface {
     width: 100%
 }
 
-.full-size {
+.pe-full-size {
     height: 100%;
      width: 100%;
 }
 
 
-.circle{
+.pe-circle{
     border-radius:50%;
-    
+}
+
+/** Hairline **/
+/** Bottom **/
+.pe-hairlined-bottom-border{
+  border-bottom:1px solid rgb(200, 200, 200);
+}
+
+.pe-hairlines .pe-hairlined-bottom-border{
+  border-width:0.5px;
+}
+/** Top **/
+.pe-hairlined-top-border{
+  border-top:1px solid rgb(200, 200, 200);
+}
+
+.pe-hairlines .pe-hairlined-top-border{
+  border-width:0.5px;
+}
+
+
+/** Nav Bar **/
+.pe-navbar.hairlined-bottom-border{
+  border-bottom-color:rgb(200, 200, 200);
+}
+
+/** Tab Bar **/
+.pe-tabbar .hairlined-top-border{
+  border-top-color:#b6b6b6;
+}
+
+.pe-tabbar{
+  background:#f8f8f8;
+  padding-top:6px;
+  div.pe-tabbar-button{
+    color:#929292;
+    div.pe-tabbar-icon-container{
+      text-align: center;
+      height: 26px;
+      margin-bottom:3px;
+      img{
+        width:26px;
+        height: 26px;
+      }
+      i.icon{
+        font-size:26px;
+      }
+    }
+    div.pe-tabbar-title{
+      text-align: center;
+      font-size:9px;
+      font-weight: 600;
+    }
+    &.selected{
+      color:#067df5;
+    }
+  }
+}
+
+
+/** Scoll View **/
+.pe-scrollview-offset-item-container{
+  padding-left:17px;
+  height:100%;
+}
+
+.pe-scrollview-offset-item{
+  height:100%;
+}
+
+.pe-scrollview-offset-item.pe-hairlined-bottom-border{
+  border-bottom-color: rgb(209, 209, 209);
+}
+
+/** User Thumbnail **/
+.pe-user-thumbnail{
+  width:100%;
+  height: 100%;
+  img{
+    width:100%;
+    height: 100%;
+  }
+}
+
+
+/** Chat List Item **/
+.pe-list-accessory{
+  width:20px;
+  height:20px;
+  color: #c7c7c7;
+  i.icon{
+    width:100%;
+    height:100%;
+  }
+}
+
+.pe-chat-item-username{
+  font-weight: 400;
+  font-size: 15px;
+}
+.pe-chat-item-fullname{
+  font-weight: 300;
+  font-size: 16px;
+}
+.pe-chat-item-msg-tagline{
+  font-weight: 400;
+  font-size:12px;
+  color:#aaa;
+}
+
+.pe-chat-item-time{
+  color:#c4c4c4;
+  float:right;
+  padding-right:10px;
 }

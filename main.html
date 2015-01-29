@@ -2,10 +2,12 @@
   <title>boilerplate</title>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-	<fa-app class="full-screen">
-		<div ui-view fa-animate-enter="enter($done)" fa-animate-leave="leave($done)"></div>
+	<fa-app class="pe-full-screen" ng-controller="MainCtrl as main">
+		<ui-view fa-animate-enter="enter($done)" fa-animate-leave="leave($done)"></ui-view>
 	</fa-app>
 </body>
