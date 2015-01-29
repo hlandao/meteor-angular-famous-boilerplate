@@ -16,7 +16,8 @@ Meteor.startup(function () {
             'pele',
             'main',
             'home',
-            'welcome'
+            'conversations',
+            'chat'
         ];
 
         angular.module(APP_ID,deps)

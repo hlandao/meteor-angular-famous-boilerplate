@@ -53,11 +53,16 @@ function RoutingConfig ($urlRouterProvider, $stateProvider, $locationProvider){
             templateUrl: '/client/home/home.tpl',
             controller : 'HomeCtrl',
             controllerAs : 'home'
-        }).state('welcome', {
-            url: '/welcome',
-            templateUrl: '/client/welcome/welcome.tpl',
-            controller : 'WelcomeCtrl',
-            controllerAs : 'welcome'
+        }).state('conversations', {
+            url: '/conversations',
+            templateUrl: '/client/conversations/conversations.tpl',
+            controller : 'ConversationsCtrl',
+            controllerAs : 'conversations'
+        }).state('chat', {
+            url: '/chat',
+            templateUrl: '/client/chat/chat.tpl',
+            controller : 'ChatCtrl',
+            controllerAs : 'chat'
         });
    
     $urlRouterProvider.otherwise("/");
@@ -71,13 +76,12 @@ var runDeps = ['$rootScope', '$state','PERoutingHelper','PELog'];
 function RoutingRun($rootScope, $state,PERoutingHelper,PELog){
 
     $state.goBack = function(defaultState, params){
-        console.log('$state.goBack');
-        if($state.previous && $state.previous.name){
-            PERoutingHelper.backTransition = true;
-            $state.go($state.previous.name, params);
-        }else if(defaultState){
+        if(defaultState){
             PERoutingHelper.backTransition = true;
             $state.go(defaultState, params);
+        } else if($state.previous && $state.previous.name){
+            PERoutingHelper.backTransition = true;
+            $state.go($state.previous.name, params);
         }
     }
 

@@ -32,6 +32,8 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var normalSlideIn = function($done){
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0]);
         ctrl.translate.set([0, 0, 0], { duration: enterDuration, curve: 'easeInOut'}, $done);
+        $timeout($done, enterDuration);
+
     }
     // Normal slide-out animation
     var normalSlideOut = function($done){
@@ -43,6 +45,7 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var backSlideIn = function($done){
         ctrl.translate.set([-(PEUI.viewSize.width/3), 0, 0]);
         ctrl.translate.set([0, 0, 0], { duration: 180, curve: 'easeInOut'}, $done);
+        $timeout($done, 180);
     }
     // Back slide-out animation
     var backSlideOut = function($done) {

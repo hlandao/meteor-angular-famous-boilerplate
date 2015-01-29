@@ -1,6 +1,6 @@
 var deps = ['$scope', '$famous','$timeout','$state'];
 
-function WelcomeCtrl($scope,$famous,$timeout,$state){
+function ConversationsCtrl($scope,$famous,$timeout,$state){
     /** Famous Components **/
     var EventHandler = $famous['famous/core/EventHandler'];
 
@@ -16,7 +16,12 @@ function WelcomeCtrl($scope,$famous,$timeout,$state){
         return '/img/dummies/alfred-icon300-' + i + ext;
     }
 
+    this.goToChat = function(item){
+        console.log('item',item);
+        $state.go('chat');
+    }
+
 }
 
-WelcomeCtrl.$inject = deps;
-angular.module('welcome').controller('WelcomeCtrl', WelcomeCtrl);
+ConversationsCtrl.$inject = deps;
+angular.module('conversations').controller('ConversationsCtrl', ConversationsCtrl);

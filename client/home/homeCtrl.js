@@ -4,7 +4,7 @@ function HomeCtrl($scope,$famous,$timeout,$state){
 			var ctrl = this;
 
             ctrl.goNext = function(){
-                $state.go('welcome');
+                $state.go('conversations');
             }
 }
 
