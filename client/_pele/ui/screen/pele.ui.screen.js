@@ -12,14 +12,12 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var Transitionable = $famous['famous/transitions/Transitionable'];
 
     /** **/
-    var enterDuration = 500,
-        leaveDuration = 500,
-        enterDelay;
+    var enterDuration = 400,
+        leaveDuration = 400;
     ctrl.translate = new Transitionable();
 
     /** Init from post link fn **/
     ctrl.setAttrs = function(attrs){
-        enterDelay = attrs.enterDelay ? attrs.enterDelay : 0;
     }
 
     /** Is back ?**/
@@ -32,25 +30,25 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var normalSlideIn = function($done){
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0]);
         ctrl.translate.set([0, 0, 0], { duration: enterDuration, curve: 'easeInOut'}, $done);
-        $timeout($done, enterDuration);
+        $timeout($done, enterDelay + enterDuration);
 
     }
     // Normal slide-out animation
     var normalSlideOut = function($done){
         ctrl.translate.set([-PEUI.viewSize.width, 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done, leaveDuration);
+        $timeout($done, leaveDelay + leaveDuration);
     }
 
     // Back slide-in animation
     var backSlideIn = function($done){
         ctrl.translate.set([-(PEUI.viewSize.width/3), 0, 0]);
-        ctrl.translate.set([0, 0, 0], { duration: 180, curve: 'easeInOut'}, $done);
-        $timeout($done, 180);
+        ctrl.translate.set([0, 0, 0], { duration: 250, curve: 'easeInOut'}, $done);
+        $timeout($done, enterDelay + 250);
     }
     // Back slide-out animation
     var backSlideOut = function($done) {
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done, leaveDuration);
+        $timeout($done, leaveDelay + leaveDuration);
     }
 
 
@@ -65,12 +63,16 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     }
 
     $scope.leave = function ($done) {
-        if(isBackTransition()){
-            backSlideOut($done);
-        }else{
-            normalSlideOut($done);
-        }
-        PERoutingHelper.backTransition = false;
+        setTimeout(function(){
+            if(isBackTransition()){
+                backSlideOut($done);
+            }else{
+                normalSlideOut($done);
+            }
+            PERoutingHelper.backTransition = false;
+        },100);
+
+
     }
 
 
