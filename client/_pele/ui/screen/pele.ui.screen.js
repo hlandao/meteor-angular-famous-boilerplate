@@ -30,25 +30,25 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var normalSlideIn = function($done){
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0]);
         ctrl.translate.set([0, 0, 0], { duration: enterDuration, curve: 'easeInOut'}, $done);
-        $timeout($done, enterDelay + enterDuration);
+        $timeout($done, enterDuration);
 
     }
     // Normal slide-out animation
     var normalSlideOut = function($done){
         ctrl.translate.set([-PEUI.viewSize.width, 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done, leaveDelay + leaveDuration);
+        $timeout($done,  leaveDuration);
     }
 
     // Back slide-in animation
     var backSlideIn = function($done){
         ctrl.translate.set([-(PEUI.viewSize.width/3), 0, 0]);
         ctrl.translate.set([0, 0, 0], { duration: 250, curve: 'easeInOut'}, $done);
-        $timeout($done, enterDelay + 250);
+        $timeout($done,  250);
     }
     // Back slide-out animation
     var backSlideOut = function($done) {
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done, leaveDelay + leaveDuration);
+        $timeout($done,  leaveDuration);
     }
 
 
