@@ -13,7 +13,9 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
 
     /** **/
     var enterDuration = 400,
-        leaveDuration = 400;
+        leaveDuration = 400,
+        enterDelay,
+        leaveDelay;
     ctrl.translate = new Transitionable();
 
     /** Init from post link fn **/
