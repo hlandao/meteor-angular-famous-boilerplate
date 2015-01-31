@@ -86,7 +86,6 @@ function RoutingRun($rootScope, $state,PERoutingHelper,PELog){
     }
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
-        console.log('$stateChangeSuccess');
         $state.previous = fromState;
     });
 }
