@@ -14,7 +14,7 @@ var deps = [];
 function peleNavbarDirective(){
     return {
         transclude : true,
-        templateUrl : '/client/_pele/ui/navbar/pele.ui.navbar.tpl',
+        templateUrl : '/client/0pele/ui/navbar/pele.ui.navbar.tpl',
         compile : function(tElement, tAttrs, transclude){
             return {
                 pre : function(scope, element, attrs){

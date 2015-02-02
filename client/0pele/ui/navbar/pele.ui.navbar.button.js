@@ -15,7 +15,7 @@ function peleNavbarButtonDirective(){
     return {
         transclude : true,
         replace : true,
-        templateUrl : '/client/_pele/ui/navbar/pele.ui.navbar.button.tpl',
+        templateUrl : '/client/0pele/ui/navbar/pele.ui.navbar.button.tpl',
         compile : function(tElement, tAttrs, transclude){
             return {
                 pre : function(scope, element, attrs){

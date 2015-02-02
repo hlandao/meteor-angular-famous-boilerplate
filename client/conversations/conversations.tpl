@@ -21,8 +21,8 @@
         </fa-modifier>
 
         <!-- CONTENT -->
-        <fa-modifier>
-            <!--<fa-container-surface fa-options="{properties : {overflow : 'hidden'}}" >-->
+        <fa-modifier fa-size="[undefined, undefined]">
+            <fa-container-surface fa-options="{properties : {overflow : 'hidden'}}" >
                 <fa-scroll-view fa-pipe-from="conversations.scrollViewEventHandler">
                     <fa-view ng-repeat="item in conversations.items">
                         <fa-modifier fa-size="[undefined, 75]">
@@ -88,7 +88,7 @@
                         </fa-modifier>
                     </fa-view>
                 </fa-scroll-view>
-            <!--</fa-container-surface>-->
+            </fa-container-surface>
         </fa-modifier>
 
         <!-- FOOTER -->

@@ -12,6 +12,7 @@ Meteor.startup(function () {
         var deps = [
             'angular-meteor',
             'famous.angular',
+            'famous.flex.angular',
             'ui.router',
             'pele',
             'main',

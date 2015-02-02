@@ -11,15 +11,19 @@ function ConversationsCtrl($scope,$famous,$timeout,$state){
         $state.goBack('home');
     }
 
+
+    ctrl.goToChat = function(item){
+        $state.go('chat');
+    }
+
+
+    /** Dummy Items **/
     ctrl.imageUrl = function(i){
         i = i%5;
         var ext = i == 0 ? '.png' : '.jpg';
         return '/img/dummies/alfred-icon300-' + i + ext;
     }
 
-    ctrl.goToChat = function(item){
-        $state.go('chat');
-    }
 
     var dummyItems = [
         {
@@ -59,16 +63,12 @@ function ConversationsCtrl($scope,$famous,$timeout,$state){
         }
 
     ]
+
     ctrl.items = [];
-    for(var i = 0;i < 7; ++i){
+    for(var i = 0;i < 50; ++i){
         ctrl.items.push(angular.extend({},dummyItems[i%5]));
     }
 
-    $timeout(function(){
-        for(var i = 0;i < 40; ++i){
-            ctrl.items.push(angular.extend({},dummyItems[i%5]));
-        }
-    },1500);
 
 }
 
