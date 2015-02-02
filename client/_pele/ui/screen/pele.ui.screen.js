@@ -1,5 +1,5 @@
 /** Template **/
-var template = '<fa-view><fa-modifier fa-translate="screen.translate.get()"><ng-transclude></ng-transclude></fa-modifier></fa-view>';
+var template = '<fa-view class="chat-screen"><fa-modifier fa-translate="screen.translate.get()"><ng-transclude></ng-transclude></fa-modifier></fa-view>';
 
 /** Controller **/
 var controllerDeps = ['$scope', '$famous','$timeout','$state','PEUI','PERoutingHelper'];
@@ -12,8 +12,8 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
     var Transitionable = $famous['famous/transitions/Transitionable'];
 
     /** **/
-    var enterDuration = 400,
-        leaveDuration = 400;
+    var enterDuration = 600,
+        leaveDuration = 300;
     ctrl.translate = new Transitionable();
 
     /** Init from post link fn **/
@@ -25,30 +25,43 @@ function PeleScreenController($scope,$famous,$timeout,$state, PEUI, PERoutingHel
         return PERoutingHelper.backTransition;
     }
 
+    var delay = 30;
+
     /** Animations **/
     // Normal slide-in animation
     var normalSlideIn = function($done){
         ctrl.translate.set([+(PEUI.viewSize.width), 0, 0]);
-        ctrl.translate.set([0, 0, 0], { duration: enterDuration, curve: 'easeInOut'}, $done);
-        $timeout($done, enterDuration);
+        setTimeout(function(){
+            ctrl.translate.set([0, 0, 0], { duration: enterDuration, curve: 'easeInOut'}, $done);
+        },delay)
+        $timeout($done, delay + enterDuration);
 
     }
     // Normal slide-out animation
     var normalSlideOut = function($done){
-        ctrl.translate.set([-PEUI.viewSize.width, 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done,  leaveDuration);
+        setTimeout(function(){
+            ctrl.translate.set([-PEUI.viewSize.width, 0, 0], { duration:  leaveDuration, curve: 'easeInOut' }, $done);
+        },delay)
+
+        $timeout($done,  delay + leaveDuration);
     }
 
     // Back slide-in animation
     var backSlideIn = function($done){
         ctrl.translate.set([-(PEUI.viewSize.width/3), 0, 0]);
-        ctrl.translate.set([0, 0, 0], { duration: 250, curve: 'easeInOut'}, $done);
-        $timeout($done,  250);
+        setTimeout(function(){
+            ctrl.translate.set([0, 0, 0], { duration: 250, curve: 'easeInOut'}, $done);
+        },delay)
+
+        $timeout($done,  delay + 250);
     }
     // Back slide-out animation
     var backSlideOut = function($done) {
-        ctrl.translate.set([+(PEUI.viewSize.width), 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
-        $timeout($done,  leaveDuration);
+        setTimeout(function(){
+            ctrl.translate.set([+(PEUI.viewSize.width), 0, 0], { duration: leaveDuration, curve: 'easeInOut' }, $done);
+        },delay)
+
+        $timeout($done,  delay + leaveDuration);
     }
 
 
